@@ -53,7 +53,9 @@
 
                 $sql = "INSERT INTO users (email, password, role,name)
                 VALUES ('".$email."', '".$password."',  '".$role."', '".$name."')";
+
                 $result = $conn->query($sql);
+                
                 header("Location: ".$base_url."/admin?module=users&action=users_list");
             }
         ?>

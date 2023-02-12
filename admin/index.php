@@ -2,14 +2,14 @@
 <?php
 ob_start();
 include('../core/setting.php');
+
 if(isset($_SESSION['is_authorized'])){
-
     if($_SESSION['is_authorized']==false){
-        header("Location: ".$base_url."/login");
-
+        header("Location: ".$base_url."/login.php");
     }
 }
 ?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -38,9 +38,10 @@ if(isset($_SESSION['is_authorized'])){
   <?php include('../core/connect.php') ?>
    
    <?php 
+   
    if(isset($_GET['module']) && isset($_GET['action'])){
-
-      include("../admin/".$_GET['module']."/".$_GET['action'].".php");
+      
+       include("../admin/".$_GET['module']."/".$_GET['action'].".php");
    }
    ?>
 
